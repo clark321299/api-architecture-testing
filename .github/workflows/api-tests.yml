@@ -18,10 +18,4 @@ jobs:
         run: npm install -g newman
         
       - name: Run API Tests
-        run: newman run "APIArchitectureTesting.postman_collection.json" --reporters cli,junit
-        
-      - name: Publish Test Results
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: newman/*.xml
+        run: newman run "APIArchitectureTesting.postman_collection.json" --reporters cli
